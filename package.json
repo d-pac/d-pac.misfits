@@ -1,0 +1,27 @@
+{
+  "name": "d-pac.misfits",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Camille Reynders <camille.reynders@imec.be>",
+  "license": "MIT",
+  "dependencies": {
+    "d-pac.functions": "^1.3.0",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-prototypers": "^0.2.0",
+    "istanbul": "^0.4.5",
+    "jsdoc-to-markdown": "^3.0.0",
+    "markdown-include": "^0.4.3",
+    "mocha": "^3.2.0",
+    "must": "^0.13.4",
+    "require-directory": "^2.1.1"
+  },
+  "scripts": {
+    "test": "mocha",
+    "test-cov": "istanbul cover _mocha",
+    "docs": "jsdoc2md lib/stat.js > .tmp/STAT.md && jsdoc2md lib/pm.js > .tmp/PM.md && markdown-include markdown.json",
+    "lint": "eslint lib tests && echo 'Linting finished!'"
+  }
+}
