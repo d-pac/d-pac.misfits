@@ -9,6 +9,7 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
+    "benchmark": "^2.1.3",
     "eslint": "^3.17.1",
     "eslint-config-prototypers": "^0.2.0",
     "istanbul": "^0.4.5",
@@ -22,6 +23,7 @@
     "test": "mocha",
     "test-cov": "istanbul cover _mocha",
     "docs": "jsdoc2md lib/stat.js > .tmp/STAT.md && jsdoc2md lib/pm.js > .tmp/PM.md && markdown-include markdown.json",
-    "lint": "eslint lib tests && echo 'Linting finished!'"
+    "lint": "eslint lib tests && echo 'Linting finished!'",
+    "benchmark": "node benchmark"
   }
 }
