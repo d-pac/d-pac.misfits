@@ -22,8 +22,8 @@
   "scripts": {
     "test": "mocha",
     "test-cov": "istanbul cover _mocha",
-    "docs": "jsdoc2md lib/stat.js > .tmp/STAT.md && jsdoc2md lib/pm.js > .tmp/PM.md && markdown-include markdown.json",
-    "lint": "eslint lib tests && echo 'Linting finished!'",
+    "docs": "jsdoc2md lib/misfit.js > .tmp/MISFIT.md && markdown-include markdown.json",
+    "lint": "eslint lib test && echo 'Linting finished!'",
     "benchmark": "node benchmark"
   }
 }
