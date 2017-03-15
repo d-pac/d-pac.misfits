@@ -1,3 +1,5 @@
+'use strict';
+
 const _ = require('lodash');
 
 module.exports = class accessor {
@@ -27,7 +29,7 @@ module.exports = class accessor {
           `byRepresentation[${comparison.representations.b}]`,
         ];
       }
-    }
+    };
   }
 
 };
