@@ -1,7 +1,7 @@
 {
   "name": "d-pac.misfits",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/misfit.js",
   "author": "Camille Reynders <camille.reynders@imec.be>",
   "license": "MIT",
   "dependencies": {
