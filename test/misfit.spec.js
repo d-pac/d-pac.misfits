@@ -29,11 +29,11 @@ describe('misfit', function () {
 
         fx.allCompleted.output.representation.forEach(function (expected) {
           const actual = aggregated.byRepresentation[expected.representation];
-          expect(Number(actual.infit.toFixed( 4 ))).to.equal(expected.infit);
+          expect(Number(actual.infit.toFixed( 4 )), `Representation#infit for '${expected.representation}' incorrect`).to.equal(expected.infit);
         });
         fx.allCompleted.output.assessor.forEach(function (expected) {
           const actual = aggregated.byAssessor[expected.assessor];
-          expect(Number(actual.infit.toFixed( 4 ))).to.equal(expected.infit);
+          expect(Number(actual.infit.toFixed( 4 )), `Assessor#infit for '${expected.assessor}' incorrect`).to.equal(expected.infit);
         });
       });
     });
@@ -43,11 +43,11 @@ describe('misfit', function () {
 
         fx.someCompleted.output.representation.forEach(function (expected) {
           const actual = aggregated.byRepresentation[expected.representation];
-          expect(Number(actual.infit.toFixed( 4 ))).to.equal(expected.infit);
+          expect(Number(actual.infit.toFixed( 4 )), `Representation#infit for '${expected.representation}' incorrect`).to.equal(expected.infit);
         });
         fx.someCompleted.output.assessor.forEach(function (expected) {
           const actual = aggregated.byAssessor[expected.assessor];
-          expect(Number(actual.infit.toFixed( 4 ))).to.equal(expected.infit);
+          expect(Number(actual.infit.toFixed( 4 )), `Assessor#infit for '${expected.assessor}' incorrect`).to.equal(expected.infit);
         });
       });
     });
