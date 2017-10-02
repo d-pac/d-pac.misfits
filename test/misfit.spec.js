@@ -5,6 +5,11 @@ const subject = require('../lib/misfit');
 const _ = require('lodash');
 const fx = require('./fixtures');
 
+function mapByID(m, o){
+  m[o._id] = o;
+  return m;
+}
+
 
 describe('misfit', function () {
   describe("spec file", function () {
@@ -14,16 +19,13 @@ describe('misfit', function () {
   });
 
   describe('module', function () {
-    const representationsById = _.reduce(fx.allCompleted.representations, function (memo, representation) {
-      memo[representation._id] = representation;
-      return memo;
-    }, {});
-    let accessor;
-    beforeEach(function () {
-      accessor = new fx.accessor(representationsById);
-    });
-
     describe('(allCompleted, accessor)', function () {
+      const representationsById = _.reduce(fx.allCompleted.representations, mapByID, {});
+      let accessor;
+      beforeEach(function () {
+        accessor = new fx.accessor(representationsById);
+      });
+
       it('should function properly', function () {
         const aggregated = subject(fx.allCompleted.comparisons, accessor);
 
@@ -37,7 +39,14 @@ describe('misfit', function () {
         });
       });
     });
-    describe.skip('(someCompleted, accessor)', function () {
+
+    describe('(someCompleted, accessor)', function () {
+      const representationsById = _.reduce(fx.someCompleted.representations, mapByID, {});
+      let accessor;
+      beforeEach(function () {
+        accessor = new fx.accessor(representationsById);
+      });
+
       it('should function properly', function () {
         const aggregated = subject(fx.someCompleted.comparisons, accessor);
 
@@ -52,5 +61,4 @@ describe('misfit', function () {
       });
     });
   });
-
 });
