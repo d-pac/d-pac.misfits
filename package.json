@@ -23,6 +23,7 @@
     "test-cov": "istanbul cover _mocha",
     "docs": "documentation readme lib -f md --section=API",
     "lint": "eslint lib test && echo 'Linting finished!'",
-    "benchmark": "node benchmark"
+    "benchmark": "node benchmark",
+    "preflight": "yarn lint && yarn test-cov && yarn docs"
   }
 }
